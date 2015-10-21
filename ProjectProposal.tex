@@ -23,5 +23,16 @@
 	
 	
 	\section{Classifying gentrifying neighborhoods}
+	We first classify business data into two categories, whether they are \$ or pricier than \$\$. We then use SVM and a radius neighbor classifier to categorize either a cluster or each business based on the surrounding members. For the radius classifier, we code the number of \$ for the businesses so that cheap businesses are 1 and more expensive ones are >2. If based on its neighbors the business gets a score <2 then it's cheap, if its >3 then it's an expensive business. Expensive businesses classified as a \$ business are misclassified and we assume them to be a gentrifier. There are very well mixed areas; therefore, there will be scores that fall between $[2,3]$ which we will discard. In SVM, there is a similar concept, where well mixed neighborhoods will likely be within the margin so we will disregard those and misclassified businesses outside of the error margin will be classified gentrifiers. 
+	
+	
+	\section{Classifying Users}
+	We want to categorize users into 4-5 categories based on some unsupervised clustering algorithm (ie k-means) on non-spatial data. Alternatively, using the businesses that the users have reviewed, we can build use latent variables to look whether some users tend to visit particular areas over others. 
+	
+	
+	Once we have the categories, we aim to check the users who reviewed gentrifying businesses and which category of users they tend to fall in most frequently. 
+	
+	\section{Goal}
+	In the end, our goal is twofold: (a) to predict where in San Diego will more gentrifying businesses open (b) who will go there.
 	
 \end{document}
