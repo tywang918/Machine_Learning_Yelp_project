@@ -28,7 +28,7 @@
 	
 	\section{Classifying Users}
 	We want to categorize users into 4-5 categories based on some unsupervised clustering algorithm (ie k-means) on non-spatial data. Alternatively, using the businesses that the users have reviewed, we can build use latent variables to look whether some users tend to visit particular areas over others. 
-	
+	Apart from using the unsupervised clustering algorithm to categorize users, we are also considering using MCMC with mixture models. To implement this, we plan to build a graphical model with a latent variable z following multinomial (actually 4 or 5-nomial), and some hyperpriors for normals each user's data follows. Then we set up the Gibbs sampler to estimate the parameters. 
 	
 	Once we have the categories, we aim to check the users who reviewed gentrifying businesses and which category of users they tend to fall in most frequently. 
 	
